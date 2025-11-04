@@ -582,5 +582,75 @@
         }, 3000);
     </script>
 <script id="dhws-dataInjector" src="../public/dhws-data-injector.js"></script>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const timerDisplay = document.querySelector(".text-2xl.font-bold.text-primary");
+  const pauseBtn = document.querySelector(".btn-secondary");
+  const endBtn = document.querySelector(".px-4.py-2.border");
+  const progressBar = document.querySelector(".bg-primary.h-2.rounded-full");
+
+  let countdown;
+  let totalTime = 0;
+  let timeLeft = 0;
+  let isPaused = false;
+
+  function updateDisplay() {
+    const minutes = Math.floor(timeLeft / 60);
+    const seconds = timeLeft % 60;
+    timerDisplay.textContent = `${String(minutes).padStart(2, "0")}:${String(seconds).padStart(2, "0")}`;
+  }
+
+  function updateProgressBar() {
+    if (!progressBar || totalTime === 0) return;
+    const progress = ((totalTime - timeLeft) / totalTime) * 100;
+    progressBar.style.width = `${progress}%`;
+  }
+
+  function startFocusSession() {
+    let userInput = prompt("Enter focus duration in minutes (default is 25):");
+    let duration = parseInt(userInput);
+    if (isNaN(duration) || duration <= 0) duration = 25;
+
+    totalTime = duration * 60;
+    timeLeft = totalTime;
+    updateDisplay();
+    updateProgressBar();
+
+    clearInterval(countdown);
+    countdown = setInterval(() => {
+      if (!isPaused) {
+        timeLeft--;
+        updateDisplay();
+        updateProgressBar();
+
+        if (timeLeft <= 0) {
+          clearInterval(countdown);
+          progressBar.style.width = "100%";
+          alert("🎯 Focus session complete!");
+        }
+      }
+    }, 1000);
+  }
+
+  pauseBtn.addEventListener("click", () => {
+    if (!countdown) return;
+    isPaused = !isPaused;
+    pauseBtn.textContent = isPaused ? "Resume" : "Pause";
+  });
+
+  endBtn.addEventListener("click", () => {
+    if (!countdown) return;
+    clearInterval(countdown);
+    countdown = null;
+    progressBar.style.width = "0%";
+    timerDisplay.textContent = "00:00";
+    alert("Session ended early.");
+  });
+
+  startFocusSession();
+});
+</script>
+
 </body>
 </html>
