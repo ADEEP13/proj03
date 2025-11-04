@@ -1,82 +1,40 @@
-# HTML
+# This file is only for editing file nodes, do not break the structure
 
-A modern HTML project utilizing Tailwind CSS for building responsive web applications with minimal setup.
+## Project Description
+Mindful Tech is a comprehensive digital wellbeing application that helps users take control of their screen time through intelligent tracking, profession-based detox reminders, focus sessions with device locking, and AI-powered task planning. The app promotes mindful technology consumption by classifying usage into productive and distracting activities.
 
-## 🚀 Features
-
-- **HTML5** - Modern HTML structure with best practices
-- **Tailwind CSS** - Utility-first CSS framework for rapid UI development
-- **Custom Components** - Pre-built component classes for buttons and containers
-- **NPM Scripts** - Easy-to-use commands for development and building
-- **Responsive Design** - Mobile-first approach for all screen sizes
-
-## 📋 Prerequisites
-
-- Node.js (v12.x or higher)
-- npm or yarn
-
-## 🛠️ Installation
-
-1. Install dependencies:
-```bash
-npm install
-# or
-yarn install
-```
-
-2. Start the development server:
-```bash
-npm run dev
-# or
-yarn dev
-```
-
-## 📁 Project Structure
-
-```
-html_app/
-├── css/
-│   ├── tailwind.css   # Tailwind source file with custom utilities
-│   └── main.css       # Compiled CSS (generated)
-├── pages/             # HTML pages
-├── index.html         # Main entry point
-├── package.json       # Project dependencies and scripts
-└── tailwind.config.js # Tailwind CSS configuration
-```
-
-## 🎨 Styling
-
-This project uses Tailwind CSS for styling. Custom utility classes include:
+## Key Features
+- ✅ Email OTP Authentication System
+- ✅ User Onboarding with Profession Selection (Student, Professional, Tech Worker, Creative, Entrepreneur, Other)
+- ✅ Personalized Goals and Work Schedule Configuration
+- ✅ Dashboard with Screen Time Overview
+- ✅ Real-time Usage Analytics with Interactive Charts
+- ✅ Weekly Trend Visualization (Area Chart)
+- ✅ Productivity Split Analysis (Pie Chart)
+- ✅ Top Apps Tracking (Bar Chart)
+- ✅ Personalized Insights & Streak Tracking
+- ✅ Multi-tab Dashboard (Overview, Analytics, Apps)
+- ✅ Focus Session Timer with Circular Progress Visualization
+- ✅ Device Lock Mode with Emergency Unlock
+- ✅ Profession-based Session Templates (Pomodoro, Deep Work, Coding Sprint, etc.)
+- ✅ Automatic Break Management between Sessions
+- ✅ Session History and Statistics Tracking
+- ✅ Real-time Countdown Timer with Visual Progress
+- [ ] Real Screen Time Tracking Integration
+- [ ] Activity Classification (Useful vs Useless)
+- [ ] Detox Reminders Based on Profession
+- [ ] AI Task Planner Integration
 
 
-## 🧩 Customization
-
-To customize the Tailwind configuration, edit the `tailwind.config.js` file:
 
 
-## 📦 Build for Production
 
-Build the CSS for production:
+## Special Requirements
+- Profession-based customization for different user types
+- Calming, wellness-focused design system with therapeutic colors
+- Focus on mindful interactions and positive reinforcement
+- Beautiful data visualization using Recharts library
+- Full-featured focus timer with device lock capabilities
 
-```bash
-npm run build:css
-# or
-yarn build:css
-```
+## File Structure
 
-## 📱 Responsive Design
-
-The app is built with responsive design using Tailwind CSS breakpoints:
-
-- `sm`: 640px and up
-- `md`: 768px and up
-- `lg`: 1024px and up
-- `xl`: 1280px and up
-- `2xl`: 1536px and up
-
-## 🙏 Acknowledgments
-
-
-- Powered by HTML and Tailwind CSS
-
-Built with ❤️ on Rocket.new
